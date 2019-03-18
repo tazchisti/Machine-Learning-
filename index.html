@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="sryle/favicon.ico">
+
+    <title>NFL & Machine Learning</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="style/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="style/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="ztyle/jumbotron.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="style/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Final Project</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse"> -->
+          <!-- <form class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Sign in</button>
+          </form> -->
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron" style=background-image:url(style/footballfield.jpg)>
+      <div class="container">
+        <div row="col-md-12">
+            <h1><strong>MACHINE LEARNING:</strong></h1>
+            <h2>Hacking the NFL</h2>
+            <!-- <p>This is an analysis of NFL player statistics, both prior to the draft and after, to make various predictions.</p> -->
+            <p><a class="btn btn-primary btn-lg" href="https://github.com/tazchisti/Machine-Learning-.git" role="button">See the Github Repository&raquo;</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-md-12">
+                <u><h2>Introduction</h2></u>
+                <p><font size="+1"</font>The NFL Scouting Combine is a week-long showcase occurring every February at Lucas Oil Stadium in Indianapolis.  College football players perform physical and mental tests in front of National Football League coaches, general managers, and scouts from all 32 NFL teams for an intense, four-day job interview in advance of the NFL Draft. Here is a brief breakdown of the measurable drills:</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"> 
+            <!-- <a href="http://www.nfl.com/videos/nfl-combine/0ap3000000637256/How-the-NFL-Combine-works-40-yard-dash" color=gray> -->
+                <h3>40-Yard Dash</h3>   
+                <p><font size="-1"</font>The 40-yard dash is the marquee event at the combine. It's kind of like the 100-meters at the Olympics: It's all about speed, explosion and watching skilled athletes run great times. The scouts are looking for an explosion from a static start.</p>
+                <img src="style/40_Yard_Dash.jpg" alt="40YardDash" style="width:350px;height:200px;">
+            </div>
+            <div class="col-md-4">
+                <h3>Bench Press</h3>
+                <p><font size="-1"</font>The bench press is a test of strength -- 225 pounds, as many reps as the athlete can get. What the NFL scouts are also looking for is endurance. Anybody can do a max one time, but what the bench press tells the pro scouts is how often the athlete frequented his college weight room for the last 3-5 years.</p>
+                <img src="style/Bench.jpg" alt="BenchPress" style="width:350px;height:200px;">
+            </div> 
+            <div class="col-md-4">
+                <h3>Vertical Jump</h3> 
+                <p><font size="-1"</font>The vertical jump is all about lower-body explosion and power. The athlete stands flat-footed and they measure his reach. It is important to accurately measure the reach, because the differential between the reach and the flag the athlete touches is his vertical jump measurement.</p>
+                <img src="style/Verticle_Jump.jpg" alt="VerticalJump" style="width:350px;height:200px;">
+            </div>
+        </div>
+        <div class="row">   
+            <div class="col-md-4">
+                <h3>Broad Jump</h3>
+                <p><font size="-1"</font>The broad jump is like being in gym class back in junior high school. Basically, it is testing an athlete's lower-body explosion and lower-body strength. The athlete starts out with a stance balanced and then he explodes out as far as he can. It tests explosion and balance, because he has to land without moving.</p>
+                <img src="style/Broad_Jump.jpg" alt="BroadJump" style="width:350px;height:200px;">
+            </div> 
+            <div class="col-md-4">
+                <h3>3 Cone Drill</h3>   
+                <p><font size="-1"</font>The 3 cone drill tests an athlete's ability to change directions at a high speed. Three cones in an L-shape. He starts from the starting line, goes 5 yards to the first cone and back. Then, he turns, runs around the second cone, runs a weave around the third cone, which is the high point of the L, changes directions, comes back around that second cone and finishes.</p>
+                <img src="style/3_Cone_Drill.jpg" alt="3ConeDrill" style="width:350px;height:200px;">
+            </div>
+            <div class="col-md-4">
+                <h3>Shuttle Run</h3>
+                <p><font size="-1"</font>The short shuttle is the first of the cone drills. It is known as the 5-10-5. What it tests is the athlete's lateral quickness and explosion in short areas. The athlete starts in the three-point stance, explodes out 5 yards to his right, touches the line, goes back 10 yards to his left, left hand touches the line, pivot, and he turns 5 more yards and finishes.</p>
+                <img src="style/20_Yard_Shuttle.jpg" alt="20YardShuttle" style="width:350px;height:200px;">
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-12">
+                <p><font size="+1"</font>For our group's project, we are going to analyze and explore data based on the NFL's yearly draft combine. Our goal, through machine learning, is to run tests to determine any correlation between a player’s score in each of the tested categories, and then their subsequent draft position. Our first step is to clean the data from each single year, then determine any correlations and/or conclusions in our data, and display our findings through an HTML page. After analyzing the data, we hope to determine the following:</p> 
+                    <li>Given certain physical performance scores, we can predict what round of the Draft a player will be selected in</li>
+                    <li>Predict how long a players career will be based on NFL statistics</li>
+                    <li>The results of the Combine do not determine performance in the NFL.</li>
+                </p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-12">
+                <u><h2>The Data</h2></u>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3>College & NFL Stats</h3>
+                <p><font size="+1"</font>In addition to the Combine data, we collected detailed College and NFL stats from 1985 to 2015 from actual game play.  Across the 31 years of data gathered, there are over 8400 lines of data. The data includes 23 points of measure which include some of the following:
+                    <li><font size="+0.5"</font>Pass Attempts: Forward pass attempts by the playerPass</li>
+                    <li><font size="+0.5"</font>Completion: Forward passes completed by a playerPass</li>
+                    <li><font size="+0.5"</font>Yard: The amount of yards gained by a player on completed passes</li>
+                    <li><font size="+0.5"</font>Pass Interception: Number of interceptions of forward passes by a player</li>
+                    <li><font size="+0.5"</font>Pass TD: A Forward pass that results in a touch down</li>
+                    <li><font size="+0.5"</font>Rush Attempts:  The number of times a player attempted to advance the ball up the field via a rush</li>
+                    <li><font size="+0.5"</font>Rush Yard: The amount of yards gained by a player on rushes.</li>
+                    <li><font size="+0.5"</font>Rush TD: The number of touch downs scored from result of a rush</li></p>
+                <p><a class="btn btn-default" href="https://www.kaggle.com/ronaldjgrafjr/nfl-draft-outcomes" role="button"><strong>NFL Data</strong>&raquo;</a><a class="btn btn-default" href="https://www.kaggle.com/mhixon/college-football-statistics" role="button"><strong>College Stats</strong>&raquo;</a></p>
+            </div>
+        </div>
+
+
+
+
+
+
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-12">
+                <h3>The Combine</h3>
+                <p><font size="+1"</font>With increasing interest in the NFL Draft, the scouting combine has grown in scope and significance, allowing personnel directors to evaluate upcoming prospects in a standardized setting.  The Combine tests players in the 40 yard dash, vertical jump, bench press, broad jump, shuttle, and three cone drill.  Teams use this data to try and assess how well a player’s athletic traits can translate into NFL production. The data set we have acquired is from Kaggle, and includes all offensive and defensive players who have participated in the NFL's yearly combine, from the years 2000 through 2017. Each year has on average 300 participants, with information such as position played and drafted position. These players all have recorded specific individual scores in different tested areas such as a speed, agility and strength.</p>
+                <p><a class="btn btn-default" href="https://www.kaggle.com/kbanta11/nfl-combine#2016Offense.csv" role="button"><strong>Combine Data</strong>&raquo;</a></p>
+                <br>
+                <center><div class='tableauPlaceholder' id='viz1552830501884' style='position: relative'>
+                    <noscript>
+                        <a href='#'>
+                            <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;NF&#47;NFL_Combine_20190316&#47;NFLCOMBINE40YARDDASH&#47;1_rss.png' style='border: none' />
+                        </a>
+                    </noscript>
+                    <object class='tableauViz'  style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                        <param name='embed_code_version' value='3' /> <param name='site_root' value='' />
+                        <param name='name' value='NFL_Combine_20190316&#47;NFLCOMBINE40YARDDASH' />
+                        <param name='tabs' value='no' />
+                        <param name='toolbar' value='yes' />
+                        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;NF&#47;NFL_Combine_20190316&#47;NFLCOMBINE40YARDDASH&#47;1.png' />
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' />
+                        <param name='filter' value='publish=yes' />
+                    </object>
+                </div>
+                    
+                <script type='text/javascript'>
+                    var divElement = document.getElementById('viz1552830501884');
+                    var vizElement = divElement.getElementsByTagName('object')[0];
+                    if ( divElement.offsetWidth > 800 ) {
+                        vizElement.style.width='1000px';vizElement.style.height='827px';
+                        }
+                    else if ( divElement.offsetWidth > 500 ) {
+                        vizElement.style.width='1000px';
+                        vizElement.style.height='827px';
+                        }
+                    else {
+                        vizElement.style.width='100%';
+                        vizElement.style.height='827px';
+                        }
+                    var scriptElement = document.createElement('script');
+                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                </script>
+                <br>
+                <div class='tableauPlaceholder' id='viz1552834380875' style='position: relative'>
+                    <noscript>
+                        <a href='#'>
+                            <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;NF&#47;NFL_Combine_20190316&#47;NFLCOMBINEBENCHPRESS&#47;1_rss.png' style='border: none' />
+                        </a>
+                    </noscript>
+                    <object class='tableauViz'  style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                        <param name='embed_code_version' value='3' />
+                        <param name='site_root' value='' />
+                        <param name='name' value='NFL_Combine_20190316&#47;NFLCOMBINEBENCHPRESS' />
+                        <param name='tabs' value='no' />
+                        <param name='toolbar' value='yes' />
+                        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;NF&#47;NFL_Combine_20190316&#47;NFLCOMBINEBENCHPRESS&#47;1.png' />
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' />
+                        <param name='filter' value='publish=yes' />
+                    </object>
+                </div>
+                
+                <script type='text/javascript'>
+                    var divElement = document.getElementById('viz1552834380875');
+                    var vizElement = divElement.getElementsByTagName('object')[0];
+                    if ( divElement.offsetWidth > 800 ) {
+                        vizElement.style.width='1000px';
+                        vizElement.style.height='827px';
+                        }
+                    else if ( divElement.offsetWidth > 500 ) {
+                        vizElement.style.width='1000px';
+                        vizElement.style.height='827px';
+                        }
+                    else {
+                        vizElement.style.width='100%';
+                        vizElement.style.height='927px';
+                        }
+                    var scriptElement = document.createElement('script');
+                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                </script>
+                <br>
+
+                <div class='tableauPlaceholder' id='viz1552834719256' style='position: relative'>
+                    <noscript>
+                        <a href='#'>
+                            <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;NF&#47;NFL_Combine_20190316&#47;NFLCOMBINEVERTICALLEAP&#47;1_rss.png' style='border: none' />
+                        </a>
+                    </noscript>
+                    <object class='tableauViz'  style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                        <param name='embed_code_version' value='3' />
+                        <param name='site_root' value='' />
+                        <param name='name' value='NFL_Combine_20190316&#47;NFLCOMBINEVERTICALLEAP' />
+                        <param name='tabs' value='no' />
+                        <param name='toolbar' value='yes' />
+                        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;NF&#47;NFL_Combine_20190316&#47;NFLCOMBINEVERTICALLEAP&#47;1.png' />
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' />
+                        <param name='filter' value='publish=yes' />
+                    </object>
+                </div>
+
+                <script type='text/javascript'>
+                    var divElement = document.getElementById('viz1552834719256');
+                    var vizElement = divElement.getElementsByTagName('object')[0];
+                    if ( divElement.offsetWidth > 800 ) {
+                        vizElement.style.width='1000px';vizElement.style.height='827px';
+                        }
+                    else if ( divElement.offsetWidth > 500 ) {
+                        vizElement.style.width='1000px';
+                        vizElement.style.height='827px';
+                        }
+                    else {
+                        vizElement.style.width='100%';vizElement.style.height='927px';
+                        }
+                    var scriptElement = document.createElement('script');
+                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                </script>
+                <br>
+                <div class='tableauPlaceholder' id='viz1552835061468' style='position: relative'>
+                    <noscript>
+                        <a href='#'>
+                            <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;NF&#47;NFL_Combine_20190316&#47;NFLCOMBINEBROADJUMP&#47;1_rss.png' style='border: none' />
+                        </a>
+                    </noscript>
+                    <object class='tableauViz'  style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                        <param name='embed_code_version' value='3' />
+                        <param name='site_root' value='' />
+                        <param name='name' value='NFL_Combine_20190316&#47;NFLCOMBINEBROADJUMP' />
+                        <param name='tabs' value='no' />
+                        <param name='toolbar' value='yes' />
+                        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;NF&#47;NFL_Combine_20190316&#47;NFLCOMBINEBROADJUMP&#47;1.png' />
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' />
+                        <param name='filter' value='publish=yes' />
+                    </object>
+                </div>
+                
+                <script type='text/javascript'>
+                    var divElement = document.getElementById('viz1552835061468');
+                    var vizElement = divElement.getElementsByTagName('object')[0];
+                    if ( divElement.offsetWidth > 800 ) {
+                        vizElement.style.width='1000px';
+                        vizElement.style.height='827px';
+                        }
+                    else if ( divElement.offsetWidth > 500 ) {
+                        vizElement.style.width='1000px';
+                        vizElement.style.height='827px';
+                        }
+                    else {
+                        vizElement.style.width='100%';
+                        vizElement.style.height='927px';
+                        }
+                    var scriptElement = document.createElement('script');
+                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                </script>
+                <br>
+            <div class='tableauPlaceholder' id='viz1552835390848' style='position: relative'>
+                <noscript>
+                    <a href='#'>
+                        <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;NF&#47;NFL_Combine_20190316&#47;NFLCOMBINE3CONEDRILL&#47;1_rss.png' style='border: none' />
+                    </a>
+                </noscript>
+                <object class='tableauViz'  style='display:none;'>
+                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                    <param name='embed_code_version' value='3' />
+                    <param name='site_root' value='' />
+                    <param name='name' value='NFL_Combine_20190316&#47;NFLCOMBINE3CONEDRILL' />
+                    <param name='tabs' value='no' />
+                    <param name='toolbar' value='yes' />
+                    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;NF&#47;NFL_Combine_20190316&#47;NFLCOMBINE3CONEDRILL&#47;1.png' />
+                    <param name='animate_transition' value='yes' />
+                    <param name='display_static_image' value='yes' />
+                    <param name='display_spinner' value='yes' />
+                    <param name='display_overlay' value='yes' />
+                    <param name='display_count' value='yes' />
+                    <param name='filter' value='publish=yes' />
+                </object>
+            </div>
+                
+            <script type='text/javascript'>
+                var divElement = document.getElementById('viz1552835390848');
+                var vizElement = divElement.getElementsByTagName('object')[0];
+                if ( divElement.offsetWidth > 800 ) {
+                    vizElement.style.width='1000px';
+                    vizElement.style.height='827px';
+                    }
+                else if ( divElement.offsetWidth > 500 ) {
+                    vizElement.style.width='1000px';
+                    vizElement.style.height='827px';
+                    }
+                else {
+                    vizElement.style.width='100%';vizElement.style.height='977px';
+                    }
+                var scriptElement = document.createElement('script');
+                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                vizElement.parentNode.insertBefore(scriptElement, vizElement);
+            </script>
+                <br>
+            <div class='tableauPlaceholder' id='viz1552835588381' style='position: relative'><noscript>
+                <a href='#'>
+                    <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;NF&#47;NFL_Combine_20190316&#47;NFLCOMBINE60YARDSHUTTLE&#47;1_rss.png' style='border: none' />
+                </a>
+                </noscript>
+                <object class='tableauViz'  style='display:none;'>
+                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                    <param name='embed_code_version' value='3' />
+                    <param name='site_root' value='' />
+                    <param name='name' value='NFL_Combine_20190316&#47;NFLCOMBINE60YARDSHUTTLE' />
+                    <param name='tabs' value='no' />
+                    <param name='toolbar' value='yes' />
+                    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;NF&#47;NFL_Combine_20190316&#47;NFLCOMBINE60YARDSHUTTLE&#47;1.png' />
+                    <param name='animate_transition' value='yes' />
+                    <param name='display_static_image' value='yes' />
+                    <param name='display_spinner' value='yes' />
+                    <param name='display_overlay' value='yes' />
+                    <param name='display_count' value='yes' />
+                    <param name='filter' value='publish=yes' />
+                </object>
+            </div>
+            
+            <script type='text/javascript'>
+                var divElement = document.getElementById('viz1552835588381');
+                var vizElement = divElement.getElementsByTagName('object')[0];
+                if ( divElement.offsetWidth > 800 ) {
+                    vizElement.style.width='1000px';
+                    vizElement.style.height='827px';
+                    }
+                else if ( divElement.offsetWidth > 500 ) {
+                    vizElement.style.width='1000px';
+                    vizElement.style.height='827px';
+                    }
+                else {
+                    vizElement.style.width='100%';
+                    vizElement.style.height='927px';
+                    }
+                var scriptElement = document.createElement('script');
+                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                vizElement.parentNode.insertBefore(scriptElement, vizElement);
+            </script></center>
+            <br>
+        </div>
+    </div>
+        <br>
+        <br>
+ 
+        <hr>
+        <div class="row">
+            <div class="col-md-12">
+                <u><h2>Combine Data & Outcome</h2></u>
+                <p><font size="+1"</font>The first application of machine learning was intended to determine if any model could predict, with some degree of accuracy, that an athlete would get drafted, regardless of the round. Utilizing the Combine data only, several models used scaled input data sets to determine a binary outcome of “drafted” or “undrafted”. The summary box-plot chart provides a high-level view of the accuracy of each model based on a 10-fold cross validation procedure. </p>
+                <center><img src="style/1_All Players Model Comparison.png" alt="Combine Plot1" style="width:750px;height:600px;"></center>
+                <br>
+                <br>
+                <p><font size="+1"</font>As you can see, three models: Logistical Regression (LR), Linear Discriminant Analysis (LDA), and Support Vector Classifier (SVM) seem to provide the highest accuracy with lower standard deviations between tests. K Nearest Neighbors (KNN), Random Tree Classifier (RFC), Decision Tree Classifier (CART), and Gaussian NB (NB) do not produce the level of accuracy or consistency between tests as the aforementioned three models. 
+
+                    Further outputs from the algorithms produced relative importance of each Combine athletic test on the output. For the most part, there was not a single input of the eight total that was significantly weighted heavier than the rest. The “40 Yard Dash” carried the most importance with a value of 0.167 and the player’s “Height” had the least impact on the outcome with a weight of 0.076. </p>
+                <center><img src="style/2_All Players Input Weights.png" alt="Combine Plot2" style="width:400px;height:200px;"></center>
+                <br>
+                <br>
+                <p><font size="+1"</font>In addition to the tests listed above, a neural network algorithm and a deep learning algorithm were applied to improve accuracy. Both algorithms leveraged 100 epochs and the deep learning method used 2 additional layers to see if a more predictive model could be obtained. The neural network produced results consistent with the previous models (68.3%) but not gaining any significant improvements in accuracy. The deep neural network actually performed worse compared to other models with a value of 65.7%. </p>
+                <center><img src="style/3_All Players Neural Network.png" alt="Combine Plot3" style="width:700px;height:40px;"></center>
+                <br>
+                <br>
+                <p><font size="+1"</font>In addition to the tests listed above, a neural network algorithm and a deep learning algorithm were applied to improve accuracy. Both algorithms leveraged 100 epochs and the deep learning method used 2 additional layers to see if a more predictive model could be obtained. The neural network produced results consistent with the previous models (68.3%) but not gaining any significant improvements in accuracy. The deep neural network actually performed worse compared to other models with a value of 65.7%. </p>
+                <center><img src="style/4_All Players Deep Learning.png" alt="Combine Plot4" style="width:700px;height:40px;"> </center>
+            </div>
+        </div>  
+        <hr>
+        <div class="row">
+            <div class="col-md-12">
+                <u><h2>Quarterback Analysis & Draft Outcome</h2></u>
+                <p><font size="+1"</font>In an attempt to improve the accuracy of the model, additional player data was added to the original dataset. A Player’s historic performance during their NCAA Football careers should have an impact on NFL teams’ decision during the draft. The additional eight data points highlights their performance on a per game basis. Due to the size and scope of the data, the following analysis only focused the Quarterback position.
+
+                    The same algorithms were applied as in the previous analysis to determine if the additional data impacted accuracy. Surprisingly, there outcome showed little improvement and the models produced a much higher variation in outputs between tests, as shown in the box plot. Logistical Regression and Linear Discriminant Analysis remained the top models but Support Vector Classifier dropped in accuracy joining the other models. </p>
+                <center><img src="style/5_QB Model Comparison.png" alt="QB1" style="width:750px;height:600px;"></center>
+                <br>
+                <br>
+                <p><font size="+1"</font>The weights of the inputs remained relatively equally distributed over the 16 inputs as in the previous analysis, as well. This would suggest that the model contains too many inputs and efforts should be made to eliminate those that have little effect on the outcome. </p>
+                <center><img src="style/6_QB Input Weights.png" alt="QB2" style="width:400px;height:400px;"></center>
+                <br>
+                <br>
+                <p><font size="+1"</font>Contrary to the previous model outputs, the Neural Network saw an improvement in accuracy with the additional inputs, rising slightly to 71.4%. The Deep Learning algorithm did indicate any improvement in accuracy. </p>
+                <center><img src="style/7_QB Neural Network.png" alt="QB3" style="width:700px;height:40px;"></center>
+            </div>
+        </div> 
+        <hr>
+        <div class="row">
+            <div class="col-md-12">
+                <u><h2>Round Outcome</h2></u>
+                <p><font size="+1"</font>The next progression in the analysis was to use machine learning to predict the actual round the player was drafted. We used logistical regression across the data set to attempt to show what round a player would get drafted in. The first data set was broken into Offense (2910 players) and Defense (2726 players) categories to start to normalize the information. Using only the combine tests from the years 2000 to 2017 (Height, Weight, 40 yard dash, Vertical Jump, Bench Press Reps, Broad Jump, 3Cone Shuttle) to determine the round a player would be drafted resulted:
+                <p><u><font size="+0.5"</font>Offense</u>
+                <ul><font size="+0.5"</font>Training Data Score: 0.3913840513290559</ul>
+                <ul><font size="+0.5"</font>Testing Data Score: 0.39697802197802196</ul></p>
+                <br>  
+                <p><u>Defense</u>
+                <ul><font size="+0.5"</font>Training Data Score: 0.320450097847358</ul>
+                <ul><font size="+0.5"</font>Testing Data Score: 0.3196480938416422</ul></p>
+                <br>    
+                <p>The dataset was then condensed to a position level (OT 437 players) to see if a smaller subset of the data would produce stronger results. The combine tests (Height, Weight, Bench Press Reps, Broad Jump, 3Cone Shuttle) were also more focused to the position. Unfortunately, the results were again similar:</p>
+                <p><ul><font size="+0.5"</font>Training Data Score: 0.327217125382263</ul>
+                <ul><font size="+0.5"</font>Testing Data Score: 0.33636363636363636</ul></p>
+                <br>
+                <p>The data was then expanded to include college statistical production. We narrowed the set to the Quarterback (QB 195 players) position from the years 2006 to 2016. The datasets were merged by combine results and quarterback production ("Height", "Wt", "40YD", "Vertical", "Broad Jump", "3Cone", "Shuttle", "Pass Att", "Pass Comp", "Pass Yard", "Pass Int", "Pass TD", "Rush Att", "Rush Yard", "Rush TD").</p>
+                <p><ul><font size="+0.5"</font>Training Data Score: 0.5068493150684932</ul>
+                <ul><font size="+0.5"</font>Testing Data Score: 0.32653061224489793</ul>
+                <br>  
+                <p>The results from the testing data concluded that combine results and previous college production will not be enough to predict what round a player will get drafted. There needs to be further qualitative analysis done for each player. </p>
+            </div>
+        </div> 
+        <hr>
+        <div class="row">
+            <div class="col-md-12">
+                <u><h2>NFL Statistics</h2></u>
+                <p><font size="+1"</font>After initially fitting and testing combine and college statistics for football players, we wanted to take our next step in reverse. Our goal was to use NFL career data, to determine what round of the NFL draft our players should have been drafted in. We previously ran tests to see why NFL general managers determined who to draft in certain rounds, and for this step we wanted to see how often these GMs made the correct choice. To do this, we took NFL statistics for every drafted player from 2000 to 2017. Being a Kaggle dataset, we uploaded our csv in a pandas data frame, and then merged with our previous dataset of NFL players. Now, we have college, combine, and NFL statistics for all players from 2000-2017. 
+
+                    For our NFL draft predictions, we wanted to take a different classification route, and run a Random Forest Classification. In order to do this, we uploaded our newly created CSVs, and created two new pandas data frames. After cleaning our data, we dropped our label from one of our data frames, and fitted our train and testing values. We imported our random forest classifier, and fit our model with our desired trained labels. Our first process was to acquire a mean absolute error and an accuracy percentage for our prediction. </p>
+                <center><img src="style/8_NFL Draft Predictions.png" alt="NFL1" style="width:500px;height:400px;"></center>
+                <br>
+                <br>
+                <p><font size="+1"</font>Now with our fitted and running classifier, we wanted to determine which of our trained and tested values sklearn used to calculate our accuracy. We listed our importances and wrote our tree to a PNG file. </p>
+                <center><img src="style/9_NFL Draft Predictions.png" alt="NFL2" style="width:900px;height:200px;"></center>
+                <br>
+                <center><img src="style/10_NFL Draft Predictions.png" alt="NFL3" style="width:1100px;height:500px;"></center>
+                <br>
+                <br>
+                <p><font size="+1"</font>Our random forest classifier displayed a list of predictions, which is the round our players should have been drafted in based on their statistics. In order to better visualize our data, we called our original data frame, and merged them to display our final prediction data frame. Our final product is our prediction data frame, which displays a player’s name, the round they were actually drafted in, and then finally the round their NFL statistics determine their drafted round should have been. </p>
+                <center><img src="style/11_NFL Draft Predictions.png" alt="NFL4" style="width:300px;height:600px;"></center>
+            </div>
+        </div> 
+        <hr>
+        <div class="row">
+            <div class="col-md-12">
+                <u><h2>Conclusions</h2></u>
+                <p><font size="+1"</font>From analyzing the combine data alone, our model had a prediction success rate of approx. 65% which would indicate that while the combine performance of each player is very important, it is not by any means the full set of data that is looked at when determining whether a player will be drafted or not. This obviously makes complete sense, as college performance stats are readily available and coaches heavily lean on these when assessing players. An example would be Jarvis Jenkins in the 2011 draft. He did not score in the top 50 of any metric but was still a 2nd round pick
+                    This would lead us to predict that when adding college performance data to our model the accuracy would increase significantly, however this only took our model to 71% accuracy.</p>
+                <br>    
+                <p>The main aim of this project was to analyze performance stats to see if we could predict at what round in the NFL draft a player would be picked. Given the amount of data we had, we were aiming of an accuracy of 65 to 70%. Our model only gave us an accuracy of 32%. While this does seem very low, it is interesting to note that when we ran a model to calculate predicted draft round pick vs actual pro performance the accuracy was only 52%. This tells us that professional scouts struggle to predict pro performance based on college performance.
+                    What this tells us is that football may be not as stats driven as we thought. The unpredictable nature of the game is what makes it so enjoyable and if we did have a 100% accurate model this would probably no longer be the case.</p>
+            </div>
+        </div> 
+        <hr>
+        <div class="row">
+            <div class="col-md-12">
+                <h2><font size="+1"</font>References</h2>
+                <font size="-1"</font><li> Schoenfield, Dave (April 27, 2006). <a href="http://www.espn.com/espn/page2/story?page=schoenfield/060427">"The 100 worst draft picks ever"</a>. ESPN.com. Retrieved February 25, 2012. </li>
+                <li> <font size="-1"</font>Tatum, Doug (March 15, 2009). <a href="http://blog.nola.com/jeffduncan/2009/03/40yard_dash_is_just_a_waste_of.html">"40-yard dash is just a waste of time for NFL prospects"</a>. The Times-Picayune. Retrieved February 3, 2014. </li>
+                <li> <font size="-1"</font><a href="http://www.nfl.com/combine/workouts">The Official NFL Combine website. NFL.com</a>. </li>
+                <!-- <li> Schoenfield, Dave (April 27, 2006). <a href="http://www.espn.com/espn/page2/story?page=schoenfield/060427">"The 100 worst draft picks ever"</a>. ESPN.com. Retrieved February 25, 2012. </li>
+                <li> Schoenfield, Dave (April 27, 2006). <a href="http://www.espn.com/espn/page2/story?page=schoenfield/060427">"The 100 worst draft picks ever"</a>. ESPN.com. Retrieved February 25, 2012. </li> -->
+                <br>
+                <br>
+                <br>
+            </div>
+        </div> 
+    </div>
+
+    <hr>
+      <footer>
+        <p>&copy; Rutgers Data Science Bootcamp: Sept 2018 - Mar 2019</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
